@@ -21,19 +21,25 @@
 				</p>
 			</div>
 			<div class="title-create">
-				<h5>Masuk Akun</h5>				
+				<h5>Daftar Akun</h5>				
 			</div>
 			<div class="input">
-				<form action="<?php echo site_url('login/aksi_login'); ?>" method="post">
+				<?php
+                    echo form_open('signup/add_user');
+                ?>
 				<span>Username</span>
 				<input type="text" name="username">
+				<span>Nama Lengkap</span>
+				<input type="text" name="nama_lengkap">
 				<span>Password</span>
 				<input type="password" name="password">
 				<br>
-				<input type="submit" class="btn btn-primary" value="Masuk">
-				<span class="talk">Belum punya akun? <a href="<?php echo site_url() ?>">Daftar</a></span>
+				<input type="submit" class="btn btn-primary" value="Daftar" name="btnDaftar">
+				<span class="talk">Sudah punya akun? <a href="<?php echo site_url() ?>login">Login</a></span>
 				<div class="clear"></div>
-			</form>
+				<?php
+                echo form_close();
+                ?>
 			</div>
 			<br>
 			<br>
@@ -42,6 +48,7 @@
 			<span class="copyright">Sistem Diagnosa Tuberkulosis (SIDITU)</span>
 			<span class="copyright">©2019</span>
 		</div>
+
 	</div>
 
 </body>

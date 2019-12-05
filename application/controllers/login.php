@@ -3,6 +3,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class login extends CI_Controller {
 
+	function __construct(){
+		parent::__construct();
+	
+		if($this->session->userdata('status') == "login"){
+			redirect(site_url("beranda"));
+		}
+	}
 	public function index()
 	{
 		$this->load->view('v_login');
@@ -15,23 +22,23 @@ class login extends CI_Controller {
 				'username' => $username,
 				'password' => md5($password)
 				);
-			$cek = $this->m_login->cek_login("admin",$where)->num_rows();
+			$cek = $this->M_login->cek_login("t_users",$where)->num_rows();
 			if($cek > 0){
 	 
 				$data_session = array(
-					'nama' => $username,
+					'username' => $username,
+					'nama_lengkap' => $nama_lengkap,
 					'status' => "login"
 					);
 	 
 				$this->session->set_userdata($data_session);
 	 
-				redirect(base_url("admin"));
+				redirect(base_url("beranda"));
 	 
 			}else{
 				echo "Username dan password salah !";
 			}
 		}
-	 
 		function logout(){
 			$this->session->sess_destroy();
 			redirect(base_url('login'));

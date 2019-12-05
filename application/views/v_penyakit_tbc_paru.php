@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>SIDITU</title>
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="<?php echo base_url() ?>assett/css/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway|Roboto&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
@@ -13,7 +13,7 @@
 	<div class="container">
 		<div class="top-menu">
 			<div class="left">
-				<img src="./img/logo.png" alt="">
+				<img src="<?php echo base_url() ?>assett/img/logo.png" alt="">
 			</div>
 			<div class="right">
 				<ul>
