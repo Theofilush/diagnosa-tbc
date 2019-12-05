@@ -11,11 +11,13 @@ class tuberkulosis extends CI_Controller {
 	}
 	public function index()
 	{
-		$this->load->view('dashboard/v_header');
+		$listGejalaParu = $this->M_sistem->list_gejala_paru(); 
+		$dataHalaman = array(   		
+		  'listGejalaParu' => $listGejalaParu,
+        );
+		$this->load->view('dashboard/v_header',$dataHalaman);
 		$this->load->view('v_penyakit_tbc_paru');
 		$this->load->view('dashboard/v_footer');
-		//echo "beranda";
 	}
 
-	
 }
