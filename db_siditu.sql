@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 05 Des 2019 pada 09.42
+-- Waktu pembuatan: 05 Des 2019 pada 11.05
 -- Versi server: 10.4.6-MariaDB
 -- Versi PHP: 7.3.9
 
@@ -21,6 +21,72 @@ SET time_zone = "+00:00";
 --
 -- Database: `db_siditu`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `detail_konsultasi`
+--
+
+CREATE TABLE `detail_konsultasi` (
+  `id_konsultasi` varchar(5) NOT NULL,
+  `id_gejala` varchar(5) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `gejala`
+--
+
+CREATE TABLE `gejala` (
+  `id_gejala` varchar(5) NOT NULL,
+  `nama_gejala` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `konsultasi`
+--
+
+CREATE TABLE `konsultasi` (
+  `id_konsultasi` int(5) NOT NULL,
+  `id_pasien` int(5) NOT NULL,
+  `tgl_konsultasi` date NOT NULL,
+  `hasil_konsultasi` int(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `pengetahuan`
+--
+
+CREATE TABLE `pengetahuan` (
+  `id_pertanyaan` varchar(5) NOT NULL,
+  `iya` varchar(5) NOT NULL,
+  `tidak` varchar(5) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `pertanyaan`
+--
+
+CREATE TABLE `pertanyaan` (
+  `id_pertanyaan` varchar(5) NOT NULL,
+  `id_gejala` varchar(5) NOT NULL,
+  `pertanyaan` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `pertanyaan`
+--
+
+INSERT INTO `pertanyaan` (`id_pertanyaan`, `id_gejala`, `pertanyaan`) VALUES
+('', '1', 'Apakah anda mengalami batuk terus-menerus selama tiga minggu/lebih ?');
 
 -- --------------------------------------------------------
 
@@ -50,6 +116,36 @@ INSERT INTO `t_users` (`id_user`, `username`, `nama_lengkap`, `password`, `autho
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indeks untuk tabel `detail_konsultasi`
+--
+ALTER TABLE `detail_konsultasi`
+  ADD PRIMARY KEY (`id_konsultasi`);
+
+--
+-- Indeks untuk tabel `gejala`
+--
+ALTER TABLE `gejala`
+  ADD PRIMARY KEY (`id_gejala`);
+
+--
+-- Indeks untuk tabel `konsultasi`
+--
+ALTER TABLE `konsultasi`
+  ADD PRIMARY KEY (`id_konsultasi`);
+
+--
+-- Indeks untuk tabel `pengetahuan`
+--
+ALTER TABLE `pengetahuan`
+  ADD PRIMARY KEY (`id_pertanyaan`);
+
+--
+-- Indeks untuk tabel `pertanyaan`
+--
+ALTER TABLE `pertanyaan`
+  ADD PRIMARY KEY (`id_pertanyaan`);
 
 --
 -- Indeks untuk tabel `t_users`
