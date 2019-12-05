@@ -6,13 +6,13 @@ class login extends CI_Controller {
 	function __construct(){
 		parent::__construct();
 	
-		if($this->session->userdata('status') == "login"){
-			redirect(site_url("beranda"));
-		}
 	}
 	public function index()
 	{
 		$this->load->view('v_login');
+		if($this->session->userdata('status') == "login"){
+			redirect(site_url("beranda"));
+		}
 	}
 
 	function aksi_login(){
@@ -41,6 +41,6 @@ class login extends CI_Controller {
 		}
 		function logout(){
 			$this->session->sess_destroy();
-			redirect(base_url('login'));
+			redirect(site_url('signup'));
 		}
 }

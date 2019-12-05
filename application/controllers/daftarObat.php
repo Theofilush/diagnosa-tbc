@@ -11,7 +11,9 @@ class daftarObat extends CI_Controller {
 	}
 	public function index()
 	{
+		$this->load->view('dashboard/v_header');
 		$this->load->view('v_daftar_obat');
+		$this->load->view('dashboard/v_footer');
 		//echo "beranda";
 	}
 

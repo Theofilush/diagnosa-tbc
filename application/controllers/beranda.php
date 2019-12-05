@@ -12,7 +12,9 @@ class beranda extends CI_Controller {
 	
 	public function index()
 	{
+		$this->load->view('dashboard/v_header');
 		$this->load->view('v_beranda');
+		$this->load->view('dashboard/v_footer');
 		//echo "beranda";
 	}
 

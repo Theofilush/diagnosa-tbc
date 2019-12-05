@@ -11,7 +11,9 @@ class tuberkulosis extends CI_Controller {
 	}
 	public function index()
 	{
+		$this->load->view('dashboard/v_header');
 		$this->load->view('v_penyakit_tbc_paru');
+		$this->load->view('dashboard/v_footer');
 		//echo "beranda";
 	}
 

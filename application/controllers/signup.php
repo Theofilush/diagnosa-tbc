@@ -5,13 +5,13 @@ class signup extends CI_Controller {
 	function __construct(){
 		parent::__construct();
 	
-		if($this->session->userdata('status') != "login"){
-			redirect(base_url("login"));
-		}
 	}
 	public function index()
 	{
 		$this->load->view('v_sign_up');
+		if($this->session->userdata('status') == "login"){
+			redirect(site_url("beranda"));
+		}
 	}
 
 	function aksi_login(){
@@ -31,7 +31,7 @@ class signup extends CI_Controller {
 	 
 				$this->session->set_userdata($data_session);
 	 
-				redirect(base_url("admin"));
+				redirect(site_url("admin"));
 	 
 			}else{
 				echo "Username dan password salah !";
@@ -57,9 +57,5 @@ class signup extends CI_Controller {
 					redirect(site_url('login'));
 				}
 			}	
-		}
-		function logout(){
-			$this->session->sess_destroy();
-			redirect(base_url('login'));
 		}
 }

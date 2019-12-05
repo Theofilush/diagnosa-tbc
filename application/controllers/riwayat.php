@@ -11,7 +11,9 @@ class riwayat extends CI_Controller {
 	}
 	public function index()
 	{
+		$this->load->view('dashboard/v_header');
 		$this->load->view('v_hasil_diagnosa');
+		$this->load->view('dashboard/v_footer');
 		//echo "beranda";
 	}
 
