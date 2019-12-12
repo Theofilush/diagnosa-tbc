@@ -11,11 +11,38 @@ class M_sistem extends CI_Model{
         $query = $this->db->get('pertanyaan');
         return $query->result();
     }
+    function list_gejala(){
+    	$this->db->order_by('id_gejala', 'ASC');
+        $query = $this->db->get('pertanyaan');
+        return $query->result();
+    }
 	function list_gejala_paru(){
-        $this->db->where('id_gejala >=', '1');
-        $this->db->where('id_gejala <=', '11');
+        $this->db->where('id_gejala', '1');        
 
-        //$this->db->where('id_gejala',$id); 
+        $query = $this->db->get('pertanyaan');
+        return $query->result();
+    }
+    function list_gejala_payudara(){
+        $this->db->where('id_gejala', '3');
+         
+        $query = $this->db->get('pertanyaan');
+        return $query->result();
+    }
+    function list_gejala_getahbening(){
+        $this->db->where('id_gejala', '2');
+         
+        $query = $this->db->get('pertanyaan');
+        return $query->result();
+    }
+    function list_gejala_tulbel(){
+        $this->db->where('id_gejala', '4');
+         
+        $query = $this->db->get('pertanyaan');
+        return $query->result();
+    }
+    function list_gejala_salkem(){
+        $this->db->where('id_gejala >=', '5');
+         
         $query = $this->db->get('pertanyaan');
         return $query->result();
     }

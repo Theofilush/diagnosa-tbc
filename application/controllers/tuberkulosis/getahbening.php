@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class tuberkulosis extends CI_Controller {
+class getahbening extends CI_Controller {
 	function __construct(){
 		parent::__construct();
 	
@@ -11,12 +11,12 @@ class tuberkulosis extends CI_Controller {
 	}
 	public function index()
 	{
-		$listGejalaParu = $this->M_sistem->list_gejala_paru(); 
+		$listGejalaGeben = $this->M_sistem->list_gejala_getahbening(); 
 		$dataHalaman = array(   		
-		  'listGejalaParu' => $listGejalaParu,
+		  'listGejalaGeben' => $listGejalaGeben,
         );
 		$this->load->view('dashboard/v_header',$dataHalaman);
-		$this->load->view('v_penyakit_tbc_paru');
+		$this->load->view('tuberkulosis/v_penyakit_tbc_geben');
 		$this->load->view('dashboard/v_footer');
 	}
 

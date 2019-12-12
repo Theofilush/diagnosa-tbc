@@ -48,12 +48,11 @@
 					   <i class="fas fa-clipboard-list"></i> Penyakit
 					  </div>
 					  <ul class="list-group list-group-flush">
-					    <li class="list-group-item"><a href="<?php echo site_url() ?>tuberkulosis">TBC Paru - paru</a></li>
-					    <li class="list-group-item"><a href="<?php echo site_url() ?>tuberkulosis">TBC Payudara</a></li>
-					    <li class="list-group-item"><a href="<?php echo site_url() ?>tuberkulosis">TBC Getah Bening</a></li>
-					    <li class="list-group-item"><a href="<?php echo site_url() ?>tuberkulosis">TBC Tulang Belakang</a></li>
-					    <li class="list-group-item"><a href="<?php echo site_url() ?>tuberkulosis">TBC Ginjal</a></li>
-					    <li class="list-group-item"><a href="<?php echo site_url() ?>tuberkulosis">TBC Saluran kemih</a></li>
+					    <li class="list-group-item"><a href="<?php echo site_url() ?>tuberkulosis/paru">TBC Paru - paru</a></li>
+					    <li class="list-group-item"><a href="<?php echo site_url() ?>tuberkulosis/payudara">TBC Payudara</a></li>
+					    <li class="list-group-item"><a href="<?php echo site_url() ?>tuberkulosis/getahbening">TBC Getah Bening</a></li>
+					    <li class="list-group-item"><a href="<?php echo site_url() ?>tuberkulosis/tulangbelakang">TBC Tulang Belakang</a></li>
+					    <li class="list-group-item"><a href="<?php echo site_url() ?>tuberkulosis/salurankemih">TBC Saluran kemih</a></li>
 					  </ul>
 				</div>
 			</div>

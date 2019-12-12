@@ -9,77 +9,17 @@
 				    </tr>
 				  </thead>
 				  <tbody>
+				  	<?php 
+							foreach($listGejala as $row){
+						?> 
 				    <tr>
-				      <th scope="row">G1</th>
-				      <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+				      <th scope="row">G<?php echo $row->id_gejala; ?></th>
+				      <td><?php echo $row->pertanyaan; ?></td>
 				   
 				    </tr>
-				    <tr>
-				      <th scope="row">G2</th>
-				      <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
-			 
-				    </tr>
-				     <tr>
-				      <th scope="row">G1</th>
-				      <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
-				   
-				    </tr>
-				    <tr>
-				      <th scope="row">G2</th>
-				      <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
-			 
-				    </tr>
-				     <tr>
-				      <th scope="row">G1</th>
-				      <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
-				   
-				    </tr>
-				    <tr>
-				      <th scope="row">G2</th>
-				      <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
-			 
-				    </tr>
-				     <tr>
-				      <th scope="row">G1</th>
-				      <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
-				   
-				    </tr>
-				    <tr>
-				      <th scope="row">G2</th>
-				      <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
-			 
-				    </tr>
-				     <tr>
-				      <th scope="row">G1</th>
-				      <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
-				   
-				    </tr>
-				    <tr>
-				      <th scope="row">G2</th>
-				      <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
-			 
-				    </tr>
-				     <tr>
-				      <th scope="row">G1</th>
-				      <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
-				   
-				    </tr>
-				    <tr>
-				      <th scope="row">G2</th>
-				      <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
-			 
-				    </tr>
-				     <tr>
-				      <th scope="row">G1</th>
-				      <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
-				   
-				    </tr>
-				    <tr>
-				      <th scope="row">G2</th>
-				      <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
-			 
-				    </tr>
-				 
+				    <?php
+					 }
+					?>
 				  </tbody>
 				</table>
 			</div>

@@ -13,7 +13,8 @@
 					<div class="answer">
 						<div class="radio-right">
 						 	 <span>Tidak</span>
-						 	<input type="radio" value="0">
+						 	<!-- <input type="radio" value="0"> -->
+						 	<input type="radio" <?php echo set_radio('jeniskelamin', 'Laki-laki'); ?>> Laki-l
 						</div>
 						<div class="radio-left">
 							<span>Iya</span>
