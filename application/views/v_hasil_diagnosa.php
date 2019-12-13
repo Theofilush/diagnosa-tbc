@@ -6,18 +6,22 @@
 					<table class="table table-bordered table-hover">
 				   
 				  	<tbody>
+				  		<?php foreach($listKonsultasi as $row){ ?>
 				    <tr>
 				      <td>Nama Pasien</td>  
-				      <td>Dino Kurniawan</td>   
+				      <td><?php echo $row->nama_lengkap;?></td>   
 				    </tr>
 				    <tr>
 				      <td>Tanggal Diagnosa</td>   
-				      <td>29-November-2019</td>   
+				      <td><?php echo date_format( new DateTime($row->tgl_konsultasi) ,"d - m - Y "); ?></td>   
 				    </tr>
 				    <tr>
 				      <td>Hasil Diagnosa</td>  
-				      <td>Terdiagnosa TBC Paru-paru</td>   
+				      <td>Terdiagnosa <?php echo $row->hasil_konsultasi;?></td>   
 				    </tr>
+				    <?php
+					}
+				    ?>
 				    </tbody>
 					</table>
 				</div>
@@ -26,7 +30,7 @@
 					<table class="table table-bordered table-hover">
 				  <thead>
 				    <tr>
-				      
+				      <th scope="col">No</th>
 				      <th scope="col">Status</th>
 				      <th scope="col">Pertanyaan</th>
 				      <th scope="col">Jawaban</th>
@@ -35,66 +39,23 @@
 				    </tr>
 				 	 </thead>
 				  	<tbody>
+				  							<?php 
+												$no=0;
+												foreach($listPertanyaan as $row){
+												$no++;
+											?>
 				    <tr>
-				      <td class="middle">Terindikasi</td>
-				      <td class="middle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores veniam deserunt deleniti, molestias laudantium assumenda aut magnam nulla necessitatibus itaque vitae ?</td>   
-				      <td class="middle">Iya</td>   
+				      <td class="middle"><?php echo $no;?> </td>
+				      <td class="middle">G<?php echo $row->id_gejala; ?></td>
+				      <td class="middle"><?php echo $row->pertanyaan; ?></td>   
+				      <td class="middle"><?php ;
+				       foreach($listPengetahuan2 as $rowa){$abc = 'r'.$no; echo ($rowa->$abc) ;} ?>
+				       	
+				       </td>   
 				    </tr>
-				    <tr>
-				      <td class="middle">Tidak Terindikasi</td>
-				      <td class="middle">Lorem ipsum dolor sit amet, consectetur adipisicing elit ?</td>   
-				      <td class="middle">Iya</td>   
-				    </tr>
-				    <tr>
-				      <td class="middle">Tidak Terindikasi</td>
-				      <td class="middle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores veniam deserunt deleniti, molestias laudantium assumenda aut magnam nulla necessitatibus itaque vitae ?</td>   
-				      <td class="middle">Iya</td>   
-				    </tr>
-				    <tr>
-				      <td class="middle">Terindikasi</td>
-				      <td class="middle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores veniam deserunt deleniti, molestias laudantium assumenda aut magnam nulla necessitatibus itaque vitae ?</td>   
-				      <td class="middle">Iya</td>   
-				    </tr>
-				    <tr>
-				      <td class="middle">Terindikasi</td>
-				      <td class="middle">Lorem ipsum dolor sit amet, consectetur adipisicing elit ?</td>   
-				      <td class="middle">Iya</td>   
-				    </tr>
-				    <tr>
-				      <td class="middle">Tidak Terindikasi</td>
-				      <td class="middle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores veniam deserunt deleniti, molestias laudantium assumenda aut magnam nulla necessitatibus itaque vitae ?</td>   
-				      <td class="middle">Iya</td>   
-				    </tr>
-				    <tr>
-				      <td class="middle">Terindikasi</td>
-				      <td class="middle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores veniam deserunt deleniti, molestias laudantium assumenda aut magnam nulla necessitatibus itaque vitae ?</td>   
-				      <td class="middle">Iya</td>   
-				    </tr>
-				    <tr>
-				      <td class="middle">Terindikasi</td>
-				      <td class="middle">Lorem ipsum dolor sit amet, consectetur adipisicing elit ?</td>   
-				      <td class="middle">Iya</td>   
-				    </tr>
-				    <tr>
-				      <td class="middle">Tidak Terindikasi</td>
-				      <td class="middle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores veniam deserunt deleniti, molestias laudantium assumenda aut magnam nulla necessitatibus itaque vitae ?</td>   
-				      <td class="middle">Iya</td>   
-				    </tr>
-				    <tr>
-				      <td class="middle">Terindikasi</td>
-				      <td class="middle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores veniam deserunt deleniti, molestias laudantium assumenda aut magnam nulla necessitatibus itaque vitae ?</td>   
-				      <td class="middle">Iya</td>   
-				    </tr>
-				    <tr>
-				      <td class="middle">Terindikasi</td>
-				      <td class="middle">Lorem ipsum dolor sit amet, consectetur adipisicing elit ?</td>   
-				      <td class="middle">Iya</td>   
-				    </tr>
-				    <tr>
-				      <td class="middle">Tidak Terindikasi</td>
-				      <td class="middle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores veniam deserunt deleniti, molestias laudantium assumenda aut magnam nulla necessitatibus itaque vitae ?</td>   
-				      <td class="middle">Iya</td>   
-				    </tr>
+				    						<?php
+												 }
+											?>  
 				    </tbody>
 					</table>
 				</div>
@@ -113,11 +74,11 @@
 				    </tr>
 				    <tr>
 				      <td>Konsumsi Obat
-						<span style="display: block">* Lorem</span>
-						<span style="display: block">* Lorem</span>
-						<span style="display: block">* Lorem</span>
-
-						
+						<span style="display: block">* Rifampicin 450mg</span>
+						<span style="display: block">* Ethambutol</span>
+						<span style="display: block">* Pyrazinamide</span>
+						<span style="display: block">* INH / Izonaid</span>
+						<span style="display: block">* Vitamin B1</span>
 				      </td>   
 				    </tr>
 				    <tr>

@@ -23,9 +23,13 @@ class login extends CI_Controller {
 				'password' => md5($password)
 				);
 			$cek = $this->M_login->cek_login("t_users",$where)->num_rows();
+			$ceko = $this->M_login->cek_logina("t_users",$where);
+			foreach ($ceko as $array => $row){ $idUser = $row->id_user; } 
+			//echo $ceko;			
 			if($cek > 0){
 	 
 				$data_session = array(
+					'id_user' => $idUser,
 					'username' => $username,
 					'nama_lengkap' => $nama_lengkap,
 					'status' => "login"

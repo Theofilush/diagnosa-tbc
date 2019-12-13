@@ -11,7 +11,18 @@ class riwayat extends CI_Controller {
 	}
 	public function index()
 	{
-		$this->load->view('dashboard/v_header');
+		$idUser = $this->session->userdata('id_user');
+
+		$listPertanyaan = $this->M_sistem->list_pertanyaan(); 
+		$listKonsultasi = $this->M_sistem->list_konsultasi($idUser); 
+		$listPengetahuan2 = $this->M_sistem->list_pengetahuan2($idUser); 
+		$dataHalaman = array(   		
+		  'listPertanyaan' => $listPertanyaan,
+		  'listKonsultasi' => $listKonsultasi,
+		  'listPengetahuan2' => $listPengetahuan2,
+		  'idUser' => $idUser
+        );
+		$this->load->view('dashboard/v_header',$dataHalaman);
 		$this->load->view('v_hasil_diagnosa');
 		$this->load->view('dashboard/v_footer');
 		//echo "beranda";
