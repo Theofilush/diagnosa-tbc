@@ -127,19 +127,18 @@ class diagnosaBaru extends CI_Controller {
 					$hasilKonsultasi = "TBC Kantung Kemih";
 				}
 				
-				//exit();
+				$idUser = $this->session->userdata("id_user");
+		        //exit();
 
 				$data = array(
-					'id_pasien' =>  '1',
+					'id_pasien' =>  $idUser,
 					'tgl_konsultasi' => date("Y-m-d H:i:s"),
 					'hasil_konsultasi' => $hasilKonsultasi
 				);
 				$query= $this->M_sistem->saveDiagnosa($data);
-				//
-
 
 				$data1 = array(
-					'id_user' => '1',
+					'id_user' => $idUser,
 					'r1' => $jawaban1,
 					'r2' => $jawaban2,
 					'r3' => $jawaban3,
@@ -181,45 +180,6 @@ class diagnosaBaru extends CI_Controller {
 				);
 				$query1= $this->M_sistem->savePengetahuan2($data1);
 				
-				/*$this->db->update('pengetahuan', array('jawaban' => $jawaban1), "id_pertanyaan = 1");
-				$this->db->update('pengetahuan', array('jawaban' => $jawaban2), "id_pertanyaan = 2");
-				$this->db->update('pengetahuan', array('jawaban' => $jawaban3), "id_pertanyaan = 3");
-				$this->db->update('pengetahuan', array('jawaban' => $jawaban4), "id_pertanyaan = 4");
-				$this->db->update('pengetahuan', array('jawaban' => $jawaban5), "id_pertanyaan = 5");
-				$this->db->update('pengetahuan', array('jawaban' => $jawaban6), "id_pertanyaan = 6");
-				$this->db->update('pengetahuan', array('jawaban' => $jawaban7), "id_pertanyaan = 7");
-				$this->db->update('pengetahuan', array('jawaban' => $jawaban8), "id_pertanyaan = 8");
-				$this->db->update('pengetahuan', array('jawaban' => $jawaban9), "id_pertanyaan = 9");
-				$this->db->update('pengetahuan', array('jawaban' => $jawaban10), "id_pertanyaan = 10");
-				$this->db->update('pengetahuan', array('jawaban' => $jawaban11), "id_pertanyaan = 11");
-				$this->db->update('pengetahuan', array('jawaban' => $jawaban12), "id_pertanyaan = 12");
-				$this->db->update('pengetahuan', array('jawaban' => $jawaban13), "id_pertanyaan = 13");
-				$this->db->update('pengetahuan', array('jawaban' => $jawaban14), "id_pertanyaan = 14");
-				$this->db->update('pengetahuan', array('jawaban' => $jawaban15), "id_pertanyaan = 15");
-				$this->db->update('pengetahuan', array('jawaban' => $jawaban16), "id_pertanyaan = 16");
-				$this->db->update('pengetahuan', array('jawaban' => $jawaban17), "id_pertanyaan = 17");
-				$this->db->update('pengetahuan', array('jawaban' => $jawaban18), "id_pertanyaan = 18");
-				$this->db->update('pengetahuan', array('jawaban' => $jawaban19), "id_pertanyaan = 19");
-				$this->db->update('pengetahuan', array('jawaban' => $jawaban20), "id_pertanyaan = 20");
-				$this->db->update('pengetahuan', array('jawaban' => $jawaban21), "id_pertanyaan = 21");
-				$this->db->update('pengetahuan', array('jawaban' => $jawaban22), "id_pertanyaan = 22");
-				$this->db->update('pengetahuan', array('jawaban' => $jawaban23), "id_pertanyaan = 23");
-				$this->db->update('pengetahuan', array('jawaban' => $jawaban24), "id_pertanyaan = 24");
-				$this->db->update('pengetahuan', array('jawaban' => $jawaban25), "id_pertanyaan = 25");
-				$this->db->update('pengetahuan', array('jawaban' => $jawaban26), "id_pertanyaan = 26");
-				$this->db->update('pengetahuan', array('jawaban' => $jawaban27), "id_pertanyaan = 27");
-				$this->db->update('pengetahuan', array('jawaban' => $jawaban28), "id_pertanyaan = 28");
-				$this->db->update('pengetahuan', array('jawaban' => $jawaban29), "id_pertanyaan = 29");
-				$this->db->update('pengetahuan', array('jawaban' => $jawaban30), "id_pertanyaan = 30");
-				$this->db->update('pengetahuan', array('jawaban' => $jawaban31), "id_pertanyaan = 31");
-				$this->db->update('pengetahuan', array('jawaban' => $jawaban32), "id_pertanyaan = 32");
-				$this->db->update('pengetahuan', array('jawaban' => $jawaban33), "id_pertanyaan = 33");
-				$this->db->update('pengetahuan', array('jawaban' => $jawaban34), "id_pertanyaan = 34");
-				$this->db->update('pengetahuan', array('jawaban' => $jawaban35), "id_pertanyaan = 35");
-				$this->db->update('pengetahuan', array('jawaban' => $jawaban36), "id_pertanyaan = 36");
-				$this->db->update('pengetahuan', array('jawaban' => $jawaban37), "id_pertanyaan = 37");
-				$this->db->update('pengetahuan', array('jawaban' => $jawaban38), "id_pertanyaan = 38");*/
-
 
 				if ($query) {
 					redirect(site_url('riwayat'));

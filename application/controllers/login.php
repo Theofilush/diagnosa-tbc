@@ -36,6 +36,7 @@ class login extends CI_Controller {
 					);
 	 
 				$this->session->set_userdata($data_session);
+				$this->session->set_userdata('aaa',$data_session);
 	 
 				redirect(base_url("beranda"));
 	 
